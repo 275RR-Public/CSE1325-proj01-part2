@@ -1,0 +1,7 @@
+NAME,DAMAGE,BONUS,RANGE
+Greataxe,1d12,0,1
+Longsword,1d10,1,1
+Warhammer,1d8,2,1
+Shortsword,1d6,3,1
+Dagger,1d4,4,1
+Bow,1d6,1,5
