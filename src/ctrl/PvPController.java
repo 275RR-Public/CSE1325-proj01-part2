@@ -7,7 +7,6 @@ import java.util.Scanner;
 import javax.sound.sampled.Clip;
 
 import core.Creature;
-import core.Map;
 import core.Player;
 import view.CombatAttackMenu;
 import view.CombatDisarmMenu;

@@ -1,5 +1,5 @@
-package util;
 //https://stackoverflow.com/questions/6271417/java-get-the-current-class-name
+package util;
 
 /**
  * Exception handler when setting MonsterTypes

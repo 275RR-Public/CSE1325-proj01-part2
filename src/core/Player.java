@@ -1,7 +1,7 @@
-package core;
-import java.io.IOException;
 // dont return null - https://www.code4it.dev/cleancodetips/exceptions-instead-of-null/#:~:text=and%20everyone%20else.-,Clean%20Code%20Tip%3A%20throw%20exceptions%20instead%20of%20returning,when%20there%20is%20no%20fallback&text=When%20you%20don't%20have,exception%20instead%20of%20returning%20null.
 // exception perf - https://gunnarpeipman.com/cost-of-exceptions/
+package core;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.Objects;
 

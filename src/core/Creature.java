@@ -2,7 +2,6 @@ package core;
 
 // https://www.geeksforgeeks.org/how-to-sort-an-arraylist-of-objects-by-property-in-java/
 
-import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

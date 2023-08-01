@@ -8,7 +8,6 @@ import java.util.Scanner;
 import javax.sound.sampled.Clip;
 
 import core.Creature;
-import core.Map;
 import core.Monster;
 import core.Player;
 import core.Position;
@@ -41,8 +40,6 @@ public class PvPvEController {
     }
     
     public int show() {
-        //TODO remove dead from map
-        //TODO show monster moves?
         while(true) {
             ArrayList<Creature> sorted_list = new CombatInitiativeMenu(in, creature_list, round).show();
             sorted_player_list.clear();

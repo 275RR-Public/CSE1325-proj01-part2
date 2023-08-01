@@ -1,5 +1,5 @@
-package util;
 // https://www.javaguides.net/2018/08/how-to-check-if-string-contains-only-letters-or-digits.html
+package util;
 
 import java.util.Arrays;
 import java.util.Random;

@@ -6,7 +6,6 @@ package ctrl;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,19 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.sound.sampled.AudioFormat;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.sound.sampled.DataLine;
-import javax.sound.sampled.FloatControl;
-import javax.sound.sampled.LineEvent;
 
 import core.Creature;
 import core.Map;
 import core.Monster;
-import core.Player;
-import core.Weapon;
 import util.CsvReadException;
 import view.GameMode;
 import view.MonsterMenu;
@@ -52,8 +43,6 @@ public class GameController {
             in.nextLine();
             return;
         }
-
-        playBGM();
         
         while(true) {
             int user_selection = new GameMode(in).show();
@@ -119,36 +108,5 @@ public class GameController {
 
             creature_list.add(temp_list.get(index));
         }
-    }
-    
-    private void playBGM() {
-        try {
-            //written to help with Linux audio
-            File soundFile = new File("res/Unreal-Super-HeroIII-compressed.wav");
-            AudioInputStream soundIn = AudioSystem.getAudioInputStream(soundFile);
-            AudioFormat format = soundIn.getFormat();
-            DataLine.Info info = new DataLine.Info(Clip.class, format);
-            this.clip = (Clip)AudioSystem.getLine(info);
-            clip.addLineListener(event -> {
-                if (event.getType() == LineEvent.Type.STOP) {
-                    clip.close();
-                }
-            });
-            clip.open(soundIn);
-            setVolume(.05f); //5%
-            clip.loop(Clip.LOOP_CONTINUOUSLY);
-            //clip.start();
-        } catch (Exception e) {
-            System.out.println("Unable to play background music.");
-            System.out.print("Press Enter to continue...");
-            in.nextLine();
-        }
-    }
-    
-    private void setVolume(float volume) {
-        if (volume < 0f || volume > 1f)
-            throw new IllegalArgumentException("Volume not valid: " + volume);
-        FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);        
-        gainControl.setValue(20f * (float) Math.log10(volume));
     }
 }

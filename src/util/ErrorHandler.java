@@ -1,10 +1,6 @@
-// Optional vs return null; - https://stackoverflow.com/a/67670809
-
 package util;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
+
 import java.text.ParseException;
-import java.util.Optional;
 
 import javax.swing.JButton;
 
@@ -37,18 +33,6 @@ public class ErrorHandler {
             }
         }
         return s;
-    }
-
-    public static BufferedImage validateAvatar(String img_name) throws IOException {
-        String test = img_name.toLowerCase();
-        if(!(test.endsWith(".png") || test.endsWith(".jpg")))
-            throw new IOException("Not an Image.");
-        Optional<BufferedImage> player_avatar = LoadSave.loadImage(img_name);
-        if(player_avatar.isPresent()) {
-            return player_avatar.get();
-        } else {
-            throw new IOException("Can't load Image.");
-        }
     }
 
     public static boolean validateStats(Object str, Object dex, Object con) throws NumberFormatException {

@@ -2,6 +2,7 @@ package view;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 import core.Weapon;
@@ -49,7 +50,7 @@ public class CharacterWeaponMenu extends Menu {
 
     private void loadWeapons() throws FileNotFoundException {
         
-        File file = new File("res/weapons.csv");
+        File file = Paths.get("res/weapons.csv").toFile();
         Scanner freader = new Scanner(file);
         if(freader.hasNextLine()) freader.nextLine(); //skip header line
         while(freader.hasNextLine()) {
